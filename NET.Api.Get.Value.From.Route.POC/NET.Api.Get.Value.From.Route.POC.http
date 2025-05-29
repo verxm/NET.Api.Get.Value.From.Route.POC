@@ -1,0 +1,6 @@
+@NET.Api.Get.Value.From.Route.POC_HostAddress = http://localhost:5097
+
+GET {{NET.Api.Get.Value.From.Route.POC_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
