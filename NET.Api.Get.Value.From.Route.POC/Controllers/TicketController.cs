@@ -3,17 +3,17 @@ using Microsoft.AspNetCore.Mvc;
 namespace NET.Api.Get.Value.From.Route.POC.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
-    public class WeatherForecastController : ControllerBase
+    [Route("v1")]
+    public class TicketController : ControllerBase
     {
         private static readonly string[] Summaries = new[]
         {
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
 
-        private readonly ILogger<WeatherForecastController> _logger;
+        private readonly ILogger<TicketController> _logger;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
+        public TicketController(ILogger<TicketController> logger)
         {
             _logger = logger;
         }
