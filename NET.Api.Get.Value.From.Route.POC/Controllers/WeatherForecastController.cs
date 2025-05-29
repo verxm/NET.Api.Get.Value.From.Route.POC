@@ -18,16 +18,12 @@ namespace NET.Api.Get.Value.From.Route.POC.Controllers
             _logger = logger;
         }
 
-        [HttpGet(Name = "GetWeatherForecast")]
-        public IEnumerable<WeatherForecast> Get()
+        [HttpGet("tickets/{ticketId}")]
+        public IActionResult Get([FromRoute] string ticketId)
         {
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-            {
-                Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-                TemperatureC = Random.Shared.Next(-20, 55),
-                Summary = Summaries[Random.Shared.Next(Summaries.Length)]
-            })
-            .ToArray();
+            var ticketIdFromRoute = HttpContext.GetRouteValue("ticketid");
+
+            return Ok(new {ticketId, ticketIdFromRoute});
         }
     }
 }
